@@ -6,12 +6,15 @@ License:	GPL
 Group:		Development
 Source0:	http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/archive/tip.tar.bz2#/%{name}.tbz2
 # Source0-md5:	65a791705a1f6a7b5fd718c1af76695e
+Patch0:		ruby19.patch
 URL:		http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/
 BuildRequires:	sed >= 4.0
 Requires:	ruby >= 1.8.5
 Requires:	ruby-rbtree
 Requires:	ruby-rcsparse
-Requires:	sqlite3-ruby
+# for db/commitset - not packaged
+#Suggests:	sqlite3-ruby
+# for togit
 Suggests:	git-core >= 1.5
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,6 +29,7 @@ there is a hg and git destination available.
 %prep
 %setup -qc
 mv %{name}-*/* .
+%patch0 -p1
 
 # setup shebang
 %{__sed} -i -e '1i#!%{__ruby}' to*.rb

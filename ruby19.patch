@@ -1,0 +1,20 @@
+--- fromcvs-0.1/fromcvs.rb~	2009-04-18 20:02:40.000000000 +0300
++++ fromcvs-0.1/fromcvs.rb	2011-02-08 01:52:51.778638228 +0200
+@@ -1,6 +1,6 @@
+ require 'rcsfile'
+ require 'find'
+-require 'md5'
++require 'digest/md5'
+ require 'rbtree'
+ require 'iconv'
+ require 'getoptlong'
+--- fromcvs-0.1/commitset/commitset.rb~	2009-04-18 20:02:40.000000000 +0300
++++ fromcvs-0.1/commitset/commitset.rb	2011-02-08 01:53:35.161078748 +0200
+@@ -1,6 +1,6 @@
+ require 'rcsfile'
+ require 'find'
+-require 'md5'
++require 'digest/md5'
+ require 'sqlite3'
+ 
+ # Fix up SQLite3
