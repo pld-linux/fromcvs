@@ -1,12 +1,13 @@
 Summary:	Fast (incremental) CVS->* conversion
 Name:		fromcvs
 Version:	0.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development
 Source0:	http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/archive/tip.tar.bz2#/%{name}.tbz2
 # Source0-md5:	65a791705a1f6a7b5fd718c1af76695e
 URL:		http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/
+BuildRequires:	sed >= 4.0
 Requires:	ruby >= 1.8.5
 Requires:	ruby-rbtree
 Requires:	ruby-rcsparse
@@ -25,6 +26,10 @@ there is a hg and git destination available.
 %prep
 %setup -qc
 mv %{name}-*/* .
+
+# setup shebang
+%{__sed} -i -e '1i#!%{__ruby}' to*.rb
+chmod a+rx to*.rb
 
 %install
 rm -rf $RPM_BUILD_ROOT
