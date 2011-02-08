@@ -8,6 +8,7 @@ Source0:	http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/archive/tip.tar.bz2#/%{nam
 # Source0-md5:	65a791705a1f6a7b5fd718c1af76695e
 Patch0:		ruby19.patch
 URL:		http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/
+BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	sed >= 4.0
 Requires:	ruby >= 1.8.5
 Requires:	ruby-rbtree
@@ -29,7 +30,9 @@ there is a hg and git destination available.
 %prep
 %setup -qc
 mv %{name}-*/* .
+%if "%{pld_release}" != "ac"
 %patch0 -p1
+%endif
 
 # setup shebang
 %{__sed} -i -e '1i#!%{__ruby}' to*.rb
