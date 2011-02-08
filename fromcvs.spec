@@ -9,6 +9,8 @@ Source0:	http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/archive/tip.tar.bz2#/%{nam
 Patch0:		ruby19.patch
 URL:		http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/
 BuildRequires:	rpm >= 4.4.9-56
+BuildRequires:	rpmbuild(macros) >= 1.272
+BuildRequires:	ruby
 BuildRequires:	sed >= 4.0
 Requires:	ruby >= 1.8.5
 Requires:	ruby-rbtree
