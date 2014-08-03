@@ -1,10 +1,10 @@
 Summary:	Fast (incremental) CVS->* conversion
 Name:		fromcvs
 Version:	0.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development
-Source0:	http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/archive/tip.tar.bz2#/%{name}.tbz2
+Source0:	http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/archive/tip.tar.bz2?/%{name}.tbz2
 # Source0-md5:	65a791705a1f6a7b5fd718c1af76695e
 Patch0:		ruby19.patch
 URL:		http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/
@@ -19,11 +19,8 @@ Requires:	ruby-rcsparse
 #Suggests:	sqlite3-ruby
 # for togit
 Suggests:	git-core >= 1.5
-#BuildArch:	noarch
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-# nothing to be placed there. we're not noarch only because of ruby packaging
-%define		_enable_debug_packages	0
 
 %description
 Fromcvs is designed to sync to different target SCM; at the moment
