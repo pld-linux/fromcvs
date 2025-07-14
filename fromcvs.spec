@@ -30,7 +30,7 @@ there is a hg and git destination available.
 %setup -qc
 mv %{name}-*/* .
 %if "%{pld_release}" != "ac"
-%patch0 -p1
+%patch -P0 -p1
 %endif
 
 # setup shebang
