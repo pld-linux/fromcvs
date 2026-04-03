@@ -1,7 +1,7 @@
 Summary:	Fast (incremental) CVS->* conversion
 Name:		fromcvs
 Version:	0.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development
 Source0:	http://ww2.fs.ei.tum.de/~corecode/hg/fromcvs/archive/tip.tar.bz2?/%{name}.tbz2
